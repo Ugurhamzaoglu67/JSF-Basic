@@ -1,11 +1,11 @@
 package com.ugurhmz.jsftest;
 
+import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.inject.Named;
 
 
 
-@Named
+@ManagedBean
 @RequestScoped
 public class TestBean {
 
@@ -13,7 +13,7 @@ public class TestBean {
 
 	
 	public TestBean() {
-		result = "Hello Boston";
+		result = "Life is Good";
 	}
 	
 	
