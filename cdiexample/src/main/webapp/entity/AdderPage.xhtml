@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+	
+    
+   	<h:body>
+   		
+   		<h:form>
+   			<h:panelGrid   columns="2" style="background:#00AA88;padding:1.5rem;">
+   				<h:outputLabel value="Veri ID"/>
+   				<h:outputText value="#{formBean.data.dataId}"/>
+   				
+   				<h:outputLabel value="Veri Adı"/>
+   				<h:inputText value="#{formBean.data.dataName}" />
+   				
+   				<h:outputLabel value="Value Değeri" />
+   				<h:inputText value="#{formBean.data.dataValue}" />
+   				
+   				<h:commandButton value="Veriyi İşle" action="#{formBean.perform}"/>
+   			</h:panelGrid>
+   		</h:form>
+   		
+   		
+   	</h:body>
+</html>
