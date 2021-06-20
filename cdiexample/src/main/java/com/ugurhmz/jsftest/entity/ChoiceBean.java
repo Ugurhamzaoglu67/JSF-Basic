@@ -11,13 +11,15 @@ import javax.faces.bean.RequestScoped;
 public class ChoiceBean {
 
 	private long selectedDataId;
+	private long[] selectedDataIds;
+	private boolean dataSelected;
+	private Type selectedType;
 	
-	
+
 	public ChoiceBean() {
 		//selectedDataId = 37; // Varsayılan olarak bu seçilsin diyoruz.
+		
 	}
-	
-	
 	
 	// GET DATA LIST
 	public List<Data> getDataList(){
@@ -31,7 +33,7 @@ public class ChoiceBean {
 	}
 
 	
-	
+	// GETTER & SETTER
 	public long getSelectedDataId() {
 		return selectedDataId;
 	}
@@ -40,9 +42,52 @@ public class ChoiceBean {
 		this.selectedDataId = selectedDataId;
 	}
 	
+	public long[] getSelectedDataIds() {
+		return selectedDataIds;
+	}
+
+
+	public void setSelectedDataIds(long[] selectedDataIds) {
+		this.selectedDataIds = selectedDataIds;
+	}
+		
+	public boolean isDataSelected() {
+		return dataSelected;
+	}
+
+	public void setDataSelected(boolean dataSelected) {
+		this.dataSelected = dataSelected;
+	}
+
+	
+	public Type getSelectedType() {
+		return selectedType;
+	}
+
+	public void setSelectedType(Type selectedType) {
+		this.selectedType = selectedType;
+	}
+
+	// GET TYPES
+	public Type[] getTypes() {
+		return Type.values();
+	}
+	
+		
+		
+	// SAVE 
 	public void save() {
 		System.out.println("Seçilen ID : "+selectedDataId);
+		System.out.println("Seçilenler ID : ");
+		for(long dataId : selectedDataIds) {
+			System.out.println(dataId);
+		}
+		
+		System.out.println("Veri Seçildi : "+dataSelected);
+		System.out.println("Tür Seçildi : "+selectedType);
+		
 	}
+	
 	
 	
 	

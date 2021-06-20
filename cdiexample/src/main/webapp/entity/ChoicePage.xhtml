@@ -20,11 +20,30 @@
    			</h:selectOneMenu>
    			<br />
    		
-   			<h:commandButton value="Id Goster" action="#{choiceBean.save}" style="margin-top:8px;" />
+   			<h:selectManyCheckbox value="#{choiceBean.selectedDataIds}">
+   			
+   				<f:selectItems value="#{choiceBean.dataList}"
+   					var="data" 
+   					itemValue="#{data.dataId}"
+   					itemLabel="#{data.dataName}"		
+   				 />
+   			
+   			</h:selectManyCheckbox>	<br />
+   			Veri Seçili : 
+   			<h:selectBooleanCheckbox value="#{choiceBean.dataSelected}"/>
+   			
    			<br />
-   			
-   			
-   			
+   			Tür Seçili : 
+   			<h:selectOneMenu value="#{choiceBean.selectedType}" >
+   				<f:selectItems 
+   					value="#{choiceBean.types}" 
+   					var="type"
+   					itemValue="#{type}"
+   					itemLabel="#{type}"					
+   				/>
+   				
+   			</h:selectOneMenu>
+   			<br/><h:commandButton value="Id Goster" action="#{choiceBean.save}" style="margin-top:8px;" />
    		</h:form>
    	</h:body>
    	
